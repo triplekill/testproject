@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://br2bu2wakwsa5"]
+[gd_scene load_steps=3 format=3 uid="uid://br2bu2wakwsa5"]
 
 [ext_resource type="Script" path="res://Loading.gd" id="1_00r1s"]
+[ext_resource type="Texture2D" uid="uid://ca348pml3dqj5" path="res://asset/logo.png" id="2_864re"]
 
 [node name="Loading" type="Node2D"]
 script = ExtResource("1_00r1s")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_864re")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
