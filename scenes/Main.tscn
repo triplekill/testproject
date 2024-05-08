@@ -1,3 +1,352 @@
-[gd_scene format=3 uid="uid://cm2hpucripyd6"]
+[gd_scene load_steps=4 format=3 uid="uid://cm2hpucripyd6"]
+
+[ext_resource type="Script" path="res://scenes/Main.gd" id="1_p6ta0"]
+[ext_resource type="Script" path="res://scenes/SettingControl.gd" id="2_8284n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_np3cl"]
+bg_color = Color(0.00712737, 0.00546549, 0.00304819, 1)
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_p6ta0")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.442911, 0.442911, 0.442911, 1)
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.278
+anchor_right = 0.5
+anchor_bottom = 0.278
+offset_left = -512.64
+offset_top = -148.24
+offset_right = 511.36
+offset_bottom = 147.76
+
+[node name="GameNameLable" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "MU_GAME_NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -198.64
+offset_top = -0.52002
+offset_right = 199.36
+offset_bottom = 517.48
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+
+[node name="NewGameButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "MU_NEWGAME"
+
+[node name="LoadSaveButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "MU_LOADGAME"
+
+[node name="SettingButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "MU_SETTING"
+
+[node name="InfoButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "MU_INFO"
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "MU_EXIT"
+
+[node name="SettingControl" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.137
+anchor_right = 0.5
+anchor_bottom = 0.137
+offset_left = -512.64
+offset_top = 0.0399933
+offset_right = 511.36
+offset_bottom = 788.04
+script = ExtResource("2_8284n")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/SettingControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_np3cl")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/SettingControl/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/SettingControl/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Panel" type="Panel" parent="CanvasLayer/SettingControl/Panel/MarginContainer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(1024, 68)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/SettingControl/Panel/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "S_SETTING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LanguagePanel" type="Panel" parent="CanvasLayer/SettingControl/Panel/MarginContainer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(1024, 48)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/SettingControl/Panel/MarginContainer/VBoxContainer/LanguagePanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -25.0
+offset_right = 448.0
+offset_bottom = 23.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "S_LANGUAGE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/SettingControl/Panel/MarginContainer/VBoxContainer/LanguagePanel"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 0
+offset_left = 703.0
+offset_right = 895.0
+offset_bottom = 48.0
+flat = true
+alignment = 1
+clip_text = true
+item_count = 2
+selected = 0
+allow_reselect = true
+popup/item_0/text = "S_CHINESE"
+popup/item_0/id = 0
+popup/item_1/text = "S_ENGLISH"
+popup/item_1/id = 1
+
+[node name="DisplayPanel" type="Panel" parent="CanvasLayer/SettingControl/Panel/MarginContainer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(1024, 48)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/SettingControl/Panel/MarginContainer/VBoxContainer/DisplayPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -25.0
+offset_right = 448.0
+offset_bottom = 23.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "S_DISPLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/SettingControl/Panel/MarginContainer/VBoxContainer/DisplayPanel"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 0
+offset_left = 703.0
+offset_right = 895.0
+offset_bottom = 48.0
+flat = true
+alignment = 1
+clip_text = true
+item_count = 4
+selected = 0
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+popup/item_1/text = "2560x1440"
+popup/item_1/id = 1
+popup/item_2/text = "1440x900"
+popup/item_2/id = 2
+popup/item_3/text = "1920x1200"
+popup/item_3/id = 3
+
+[node name="FullScreenPanel" type="Panel" parent="CanvasLayer/SettingControl/Panel/MarginContainer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(1024, 48)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/SettingControl/Panel/MarginContainer/VBoxContainer/FullScreenPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -25.0
+offset_right = 448.0
+offset_bottom = 23.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "S_FULLSCREEN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer/SettingControl/Panel/MarginContainer/VBoxContainer/FullScreenPanel"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 0
+offset_left = 703.0
+offset_right = 895.0
+offset_bottom = 48.0
+text = "OFF/ON"
+flat = true
+alignment = 1
+
+[node name="SaveSettingButton" type="Button" parent="CanvasLayer/SettingControl/Panel"]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 680.0
+offset_right = 992.0
+offset_bottom = 728.0
+text = "S_SAVE"
+
+[node name="InfoControl" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.137
+anchor_right = 0.5
+anchor_bottom = 0.137
+offset_left = -512.64
+offset_top = 0.0399933
+offset_right = 511.36
+offset_bottom = 788.04
+
+[node name="Panel" type="Panel" parent="CanvasLayer/InfoControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_np3cl")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/InfoControl/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/InfoControl/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Panel" type="Panel" parent="CanvasLayer/InfoControl/Panel/MarginContainer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(1024, 68)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/InfoControl/Panel/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "MU_INFO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/InfoControl/Panel"]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 680.0
+offset_right = 992.0
+offset_bottom = 728.0
+text = "S_CLOSED"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.933
+anchor_top = 0.963
+anchor_right = 0.933
+anchor_bottom = 0.963
+offset_left = -63.3601
+offset_top = -16.04
+offset_right = 64.6399
+offset_bottom = 15.96
+text = "Version: 0.1b"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/LoadSaveButton" to="." method="_on_load_save_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/InfoButton" to="." method="_on_info_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/SettingControl/Panel/SaveSettingButton" to="." method="_on_save_setting_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/InfoControl/Panel/CloseButton" to="." method="_on_close_button_pressed"]

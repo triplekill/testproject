@@ -12,7 +12,6 @@ offset_bottom = 1080.0
 texture = ExtResource("2_864re")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
 one_shot = true
 autostart = true
 

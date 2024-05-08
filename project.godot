@@ -23,6 +23,17 @@ GameData="*res://scripts/gamedata.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=4
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
+[internationalization]
+
+locale/translation_remaps={
+"res://language/language. en.translation": PackedStringArray(),
+"res://language/language. zh.translation": PackedStringArray()
+}
+locale/translations=PackedStringArray("res://language/language.en.translation", "res://language/language.zh.translation")
 
 [rendering]
 
