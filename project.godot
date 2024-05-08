@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameData="*res://scripts/gamedata.gd"
+UserData="*res://scripts/userdata.gd"
+GameSetting="*res://scripts/gamesetting.gd"
 
 [display]
 

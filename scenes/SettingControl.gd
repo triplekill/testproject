@@ -6,17 +6,17 @@ extends Control
 
 
 func _ready():
-	if GameData.config.get_value("SETTING",GameData.LANGUAGE) == "en":
+	if GameSetting.config.get_value("SETTING",GameSetting.LANGUAGE) == "en":
 		LanguageSeleted.selected = 1
 	else:
 		LanguageSeleted.selected = 0
 	
-	if GameData.isFullScreen():
+	if GameSetting.isFullScreen():
 		ScreenSetting.set_pressed_no_signal(true)
 	else:
 		ScreenSetting.set_pressed_no_signal(false)
 
-	var display = GameData.config.get_value("SETTING",GameData.DISPLAY)
+	var display = GameSetting.config.get_value("SETTING",GameSetting.DISPLAY)
 
 	if display == "1920x1080":
 		DisplaySetting.selected = 0

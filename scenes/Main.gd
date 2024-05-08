@@ -4,17 +4,19 @@ extends Node2D
 @onready var display = $CanvasLayer/SettingControl/Panel/MarginContainer/VBoxContainer/DisplayPanel/OptionButton
 @onready var screensetting = $CanvasLayer/SettingControl/Panel/MarginContainer/VBoxContainer/FullScreenPanel/CheckButton
 @onready var info_control = $CanvasLayer/InfoControl
+@onready var version = $CanvasLayer/Label
 
 
 func _ready():
-	TranslationServer.set_locale(GameData.config.get_value("SETTING",GameData.LANGUAGE))
-	DisplayServer.window_set_size(GameData.CURRENT_DISPLAY,0)
-	if GameData.isFullScreen():
+	TranslationServer.set_locale(GameSetting.config.get_value("SETTING",GameSetting.LANGUAGE))
+	version.text = "Version:" + GameSetting.VERSION
+
+	DisplayServer.window_set_size(GameSetting.CURRENT_DISPLAY,0)
+	if GameSetting.isFullScreen():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-		
-
+	#ProjectSettings
 # 新游戏
 func _on_new_game_button_pressed():
 	pass # Replace with function body.
@@ -31,13 +33,13 @@ func _on_setting_button_pressed():
 # 系统设置保存
 func _on_save_setting_button_pressed():
 	if language.text == "S_ENGLISH":
-		GameData.setLanguage("en")
+		GameSetting.setLanguage("en")
 	else :	
-		GameData.setLanguage("zh")
+		GameSetting.setLanguage("zh")
 	if screensetting.is_pressed():
-		GameData.setFullScreen(true)
+		GameSetting.setFullScreen(true)
 	else:
-		GameData.setFullScreen(false)
+		GameSetting.setFullScreen(false)
 	get_tree().change_scene_to_file("res://scenes/Main.tscn")
 
 
