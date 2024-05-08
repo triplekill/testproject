@@ -5,6 +5,7 @@ extends Node2D
 @onready var screensetting = $CanvasLayer/SettingControl/Panel/MarginContainer/VBoxContainer/FullScreenPanel/CheckButton
 @onready var info_control = $CanvasLayer/InfoControl
 @onready var version = $CanvasLayer/Label
+@onready var chose_difficulty = $CanvasLayer/ChoseDifficulty
 
 
 func _ready():
@@ -19,7 +20,7 @@ func _ready():
 	#ProjectSettings
 # 新游戏
 func _on_new_game_button_pressed():
-	pass # Replace with function body.
+	chose_difficulty.show()
 
 
 # 读取存档
@@ -53,6 +54,12 @@ func _on_info_button_pressed():
 func _on_close_button_pressed():
 	$CanvasLayer/InfoControl.hide()
 
+# 开始游戏
+func _on_start_game_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/NewGame.tscn")
+
 # 退出游戏
 func _on_exit_button_pressed():
 	get_tree().quit()
+
+

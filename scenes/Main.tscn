@@ -1,7 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cm2hpucripyd6"]
+[gd_scene load_steps=12 format=3 uid="uid://cm2hpucripyd6"]
 
 [ext_resource type="Script" path="res://scenes/Main.gd" id="1_p6ta0"]
 [ext_resource type="Script" path="res://scenes/SettingControl.gd" id="2_8284n"]
+[ext_resource type="Script" path="res://scenes/ChoseDifficulty.gd" id="3_uqx7l"]
+[ext_resource type="Theme" uid="uid://ckksrwmn0ns3b" path="res://res/seletedButton.tres" id="4_5e5i8"]
+[ext_resource type="Texture2D" uid="uid://o040asghe6mg" path="res://asset/icon/factory_white.png" id="5_en50q"]
+[ext_resource type="Texture2D" uid="uid://o1gw6l1rblbp" path="res://asset/icon/training_white.png" id="6_hvfyo"]
+[ext_resource type="Texture2D" uid="uid://cgyjcorrhv78b" path="res://asset/icon/weapon_white.png" id="7_tce7t"]
+[ext_resource type="Texture2D" uid="uid://vptmkwegj6ol" path="res://asset/icon/hacker_white.png" id="8_wk26e"]
+[ext_resource type="Texture2D" uid="uid://bjrhe5iuac24n" path="res://asset/icon/loot_white.png" id="9_pxj8f"]
+[ext_resource type="Texture2D" uid="uid://cjqixed3bj377" path="res://asset/icon/mine_white.png" id="10_emsxn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_np3cl"]
 bg_color = Color(0.00712737, 0.00546549, 0.00304819, 1)
@@ -343,6 +351,329 @@ text = "Version: 0.1b"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ChoseDifficulty" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchor_left = 0.5
+anchor_top = 0.137
+anchor_right = 0.5
+anchor_bottom = 0.137
+offset_left = -512.64
+offset_top = 0.0399933
+offset_right = 511.36
+offset_bottom = 788.04
+script = ExtResource("3_uqx7l")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/ChoseDifficulty"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_np3cl")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/ChoseDifficulty/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Panel" type="Panel" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(1024, 68)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "MU_DIFFICULTY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Panel" type="Panel" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+
+[node name="Button1" type="Button" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_5e5i8")
+toggle_mode = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer/Panel/Button1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 128.0
+grow_horizontal = 2
+texture = ExtResource("5_en50q")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer/Panel/Button1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -117.0
+offset_top = -119.0
+offset_right = 115.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "TEST"
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_5e5i8")
+toggle_mode = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer/Panel2/Button2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 128.0
+grow_horizontal = 2
+texture = ExtResource("6_hvfyo")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer/Panel2/Button2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -117.0
+offset_top = -119.0
+offset_right = 115.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel3" type="Panel" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer/Panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_5e5i8")
+toggle_mode = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer/Panel3/Button3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 128.0
+grow_horizontal = 2
+texture = ExtResource("7_tce7t")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer/Panel3/Button3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -117.0
+offset_top = -119.0
+offset_right = 115.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Control2" type="Control" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Panel" type="Panel" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+clip_contents = true
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer2/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_5e5i8")
+toggle_mode = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer2/Panel/Button4"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 128.0
+grow_horizontal = 2
+texture = ExtResource("8_wk26e")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer2/Panel/Button4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -117.0
+offset_top = -119.0
+offset_right = 115.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+clip_contents = true
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+
+[node name="Button5" type="Button" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer2/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_5e5i8")
+toggle_mode = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer2/Panel2/Button5"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 128.0
+grow_horizontal = 2
+texture = ExtResource("9_pxj8f")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer2/Panel2/Button5"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -117.0
+offset_top = -119.0
+offset_right = 115.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel3" type="Panel" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+clip_contents = true
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+
+[node name="Button6" type="Button" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer2/Panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_5e5i8")
+toggle_mode = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer2/Panel3/Button6"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_right = 64.0
+offset_bottom = 128.0
+grow_horizontal = 2
+texture = ExtResource("10_emsxn")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer2/Panel3/Button6"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -117.0
+offset_top = -119.0
+offset_right = 115.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="StartGameButton" type="Button" parent="CanvasLayer/ChoseDifficulty/Panel"]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 680.0
+offset_right = 992.0
+offset_bottom = 728.0
+disabled = true
+text = "S_START"
+
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/LoadSaveButton" to="." method="_on_load_save_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/SettingButton" to="." method="_on_setting_button_pressed"]
@@ -350,3 +681,10 @@ vertical_alignment = 1
 [connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/SettingControl/Panel/SaveSettingButton" to="." method="_on_save_setting_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/InfoControl/Panel/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer/Panel/Button1" to="CanvasLayer/ChoseDifficulty" method="_on_button_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer/Panel2/Button2" to="CanvasLayer/ChoseDifficulty" method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer/Panel3/Button3" to="CanvasLayer/ChoseDifficulty" method="_on_button_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer2/Panel/Button4" to="CanvasLayer/ChoseDifficulty" method="_on_button_4_pressed"]
+[connection signal="pressed" from="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer2/Panel2/Button5" to="CanvasLayer/ChoseDifficulty" method="_on_button_5_pressed"]
+[connection signal="pressed" from="CanvasLayer/ChoseDifficulty/Panel/MarginContainer/VBoxContainer/HBoxContainer2/Panel3/Button6" to="CanvasLayer/ChoseDifficulty" method="_on_button_6_pressed"]
+[connection signal="pressed" from="CanvasLayer/ChoseDifficulty/Panel/StartGameButton" to="." method="_on_start_game_button_pressed"]

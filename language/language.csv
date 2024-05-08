@@ -13,3 +13,5 @@ S_ENGLISH,英文,English
 S_SAVE,保存,Save
 S_CLOSED,关闭,Close
 S_FULLSCREEN,全屏,Fullscreen
+S_START,开始游戏,StartGame
+MU_DIFFICULTY,选择增益,Game Gain

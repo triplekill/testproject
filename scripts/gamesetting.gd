@@ -33,8 +33,6 @@ func _ready():
 		CURRENT_DISPLAY = setDisplay(config.get_value(SETTING,DISPLAY))
 		CURRENT_ISFULL = isFullScreen()
 
-	GameData.gNameDataInit()
-
 
 func getDisplay():
 	var display = ""
